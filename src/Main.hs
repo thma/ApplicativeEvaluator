@@ -43,4 +43,5 @@ module Main where
   main :: IO ()
   main = do
     let exp = Mul (Add (Val 3) (Val 4)) (Mul (Val 2) (Var "x"))
-    print $ eval2 exp [("x", 4.3)]
+    let env = [("x", 2)]
+    print $ eval2 exp env
